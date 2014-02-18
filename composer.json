@@ -1,5 +1,5 @@
 {
-    "name": "gc-world/vvote",
+    "name": "gcWorld/vvote",
     "description": "",
     "authors": [
         {
@@ -13,7 +13,9 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
+            "src/controllers",
+            "src/models"
         ],
         "psr-0": {
             "GcWorld\\Vvote\\": "src/"

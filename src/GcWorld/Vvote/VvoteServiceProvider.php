@@ -18,7 +18,9 @@ class VvoteServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('gc-world/vvote');
+		$this->package('gcWorld/vvote');
+        
+        include __DIR__.'/../../routes.php';
 	}
 
 	/**
