@@ -1,3 +1,4 @@
+@if(!Vvote::question()=="")
 <h4>{{Vvote::question()}}</h4>
 <div id="voting">
     <form method="post" action="{{ URL::to('vote/submit') }}">
@@ -13,3 +14,6 @@
     {{Vvote::displayResult()}}
 <span class="btn btn-primary dropdown-results btn-results" id="show_vote">Abstimmen</span>
 </div>
+@else
+{{ Lang::get('vvote::general.no_vote') }}
+@endif
