@@ -16,6 +16,7 @@ class CreateVvotesTable extends Migration {
 			$table->increments('id');
 			$table->integer('question');
 			$table->integer('answer');
+            $table->timestamps();
 		});
 	}
 
