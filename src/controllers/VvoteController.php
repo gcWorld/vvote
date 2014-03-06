@@ -169,7 +169,11 @@ class VvoteController extends BaseController {
         foreach($as as $a){
             $vote = DB::table('vvotes')->where('question','=',$id)->where('answer','=',$a->id)->get();
             $votes2 = count($vote);
-            $votes = $votes2/$totalvotes*100;
+            if($totalvotes>0) {
+                $votes = $votes2/$totalvotes*100;
+            } else {
+                $votes = 0;   
+            }
             $results.= $a->answer.'<div class="progress"><span class="bar-text">'.$votes.'% ('.$votes2.')</span><div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="'.$votes.'" aria-valuemin="0" aria-valuemax="100" style="width: '.$votes.'%"><span class="sr-only">'.$votes.'% '.$a->answer.'</span></div></div>';
         }
         
